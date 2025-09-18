@@ -56,9 +56,9 @@
 
 <h3 id="abstract">Abstract</h3>
 
-<p>In this paper, we present a vocoder-free framework for audio super-resolution that employs a flow-matching generative model to capture the conditional distribution of complex-valued spectral coefficients. 
-Unlike conventional diffusion-based two-stage approaches that first predict an intermediate mel-spectrogram and then rely on a pre-trained neural vocoder to synthesize waveforms, our method directly reconstructs waveforms via the inverse Short-Time Fourier Transform (iSTFT), thereby eliminating the dependence on a separate vocoder. This design not only simplifies end-to-end optimization but also overcomes a critical bottleneck of two-stage pipelines, where the final audio quality is fundamentally constrained by vocoder performance. 
-Extensive experiments show that our model consistently produces high-fidelity 48 kHz audio across diverse upsampling factors, achieving state-of-the-art performance on both speech and general audio datasets.</p>
+<p>In this paper, we present a vocoder-free framework for audio super-resolution that employs a flow matching generative model to capture the conditional distribution of complex-valued spectral coefficients. 
+Unlike conventional two-stage diffusion-based approaches that predict a mel-spectrogram and then rely on a pre-trained neural vocoder to synthesize waveforms, our method directly reconstructs waveforms via the inverse Short-Time Fourier Transform (iSTFT), thereby eliminating the dependence on a separate vocoder. This design not only simplifies end-to-end optimization but also overcomes a critical bottleneck of two-stage pipelines, where the final audio quality is fundamentally constrained by vocoder performance. 
+Experiments show that our model consistently produces high-fidelity 48 kHz audio across diverse upsampling factors, achieving state-of-the-art performance on both speech and general audio datasets.</p>
 
 <p><br /></p>
 
@@ -66,19 +66,13 @@ Extensive experiments show that our model consistently produces high-fidelity 48
 
 <p><br />
 
-<img src="./assets/universr.png" /></p>
+<img src="./assets/overall_fig.png" /></p>
 
-Overall framework of UniverSR showing (a) training stage, (b) inference stage, (c) vector field estimator architecture, and (d) feature encoder architecture. Specifically, ODE solver consists of feature encoder and vector field estimator.
+Overall illustrations of UniverSR showing (a) training stage, (b) inference stage, (c) vector field estimator architecture, and (d) feature encoder architecture. Specifically, ODE solver consists of feature encoder and vector field estimator.
 
 <p><br /></p>
 
 <h3 id="samples">Audio Super Resoultion in Speech Domain</h3>
-
-<p><br /></p>
-
-<p>Add some explanations...</p>
-
-<p><br /></p>
 
 <table align="center" style="text-align:center; border-collapse:collapse;" border="1">
   <tr>
@@ -269,12 +263,6 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
 
 <h3 id="samples">Audio Super Resoultion in Music Domain</h3>
 
-<p><br /></p>
-
-<p>Add some explanations...</p>
-
-<p><br /></p>
-
 <table align="center" style="text-align:center; border-collapse:collapse;" border="1">
   <tr>
     <th style="text-align:center;">Ground Truth</th>
@@ -463,12 +451,6 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
 <p><br /></p>
 
 <h3 id="samples">Audio Super Resoultion in Sound Effect Domain</h3>
-
-<p><br /></p>
-
-<p>Add some explanations...</p>
-
-<p><br /></p>
 
 <table align="center" style="text-align:center; border-collapse:collapse;" border="1">
   <tr>
@@ -659,31 +641,25 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
 
 <h3 id="samples">Comparison with Speech Super Resolution Models</h3>
 
-<p><br /></p>
-
-<p>Add some explanations...</p>
-
-<p><br /></p>
-
 <table align="center" style="text-align:center; border-collapse:collapse;" border="1">
   <tr>
-    <th style="text-align:center;">Ground Truth (Vocoded)</th>
     <th style="text-align:center;">Ground Truth</th>
+    <th style="text-align:center;">Ground Truth (Vocoded)</th>
   </tr>
   <tr>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/GT (Ref)_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/GT (Ref)_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/Vocoded_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/Vocoded_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -705,33 +681,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>Input</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/input_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/input_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/input_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/input_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/input_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/input_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/input_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/input_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -742,33 +718,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>Fre-Painter</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FrePaint_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FrePaint_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FrePaint_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FrePaint_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FrePaint_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FrePaint_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FrePaint_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FrePaint_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -779,33 +755,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>FlowHigh</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FlowHigh_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FlowHigh_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FlowHigh_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FlowHigh_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FlowHigh_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FlowHigh_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/FlowHigh_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/FlowHigh_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -816,33 +792,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>NU-Wave2</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/NuWave_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/NuWave_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/NuWave_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/NuWave_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/NuWave_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/NuWave_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/NuWave_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/NuWave_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -853,33 +829,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>UDM+</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/UDM_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/UDM_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/UDM_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/UDM_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/UDM_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/UDM_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/UDM_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/UDM_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
@@ -890,33 +866,33 @@ Overall framework of UniverSR showing (a) training stage, (b) inference stage, (
     <td><b>UniverSR (Proposed)</b></td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/Prop_8000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/Prop_8000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/Prop_12000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/Prop_12000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/Prop_16000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/Prop_16000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
     <td>
       <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="assets/mel/temp_mel.png" width="200px" height="100px">
+        <img src="assets/vctk/Prop_24000.png" width="200px" height="100px">
         <audio controls style="width:200px; height:50px;">
-          <source src="assets/wav/temp_wav.wav" type="audio/wav">
+          <source src="assets/vctk/Prop_24000.wav" type="audio/wav">
         </audio>
       </div>
     </td>
